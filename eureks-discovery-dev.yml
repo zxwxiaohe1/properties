@@ -3,3 +3,23 @@ info:
   version: 1.0
   publishtime: 2020-03-17
   description: testing
+bmc:
+  system:
+    mysqlschema: cdhr_platform_bmc_log
+  log-server:
+    rabbit:
+      #是否开启rabbit mq，用于推送数据(地市为false，省中心为true)
+      enabled: true
+    schedule:
+      log:
+        clear:
+          #是否开启表数据自动清除定时任务
+          enable: true
+          #定时任务执行时间（可配置多个，用逗号隔开）
+          time: 23:59:00,
+          #表数据导出目录，需要与MySQL自动导出数据目录一致,路径分隔符一律使用"/"
+          backup-path: D:/bmc-log-server-archive/
+          #数据表允许保存最大条数
+          retain: 10000
+          #配置需要执行数据转存的数据表
+          tables: bmc_log_envi,bmc_log_equip,bmc_log_equip_task,bmc_log_exinfo,bmc_log_facility,bmc_log_service_call,bmc_log_system,bmc_log_task
