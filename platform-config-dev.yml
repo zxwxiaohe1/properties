@@ -1,0 +1,22 @@
+app:
+  serialno: 0201
+#configpath: D:/16/Config.xml
+configpath: /maven/test/cdhr
+mybatis:
+  mapperLocations: classpath:mappers/*.xml
+  typeAliasesPackage: System.Dao.domain
+server:
+  masterip: 172.39.8.204
+  port: 18000
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://%s:%s/ucen_portal?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 111111
+  http:
+    encoding:
+      enabled: true
+  jmx:
+    default-domain: ucen_portal_config
+version: '@project.version@'

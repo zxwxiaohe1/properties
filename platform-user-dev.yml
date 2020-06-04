@@ -1,0 +1,51 @@
+server:
+  port: 18001
+  masterip: 172.39.8.204
+  configurl: http://${server.masterip}:18000
+  portalurl: http://${server.masterip}:18002
+app:
+  userServer:
+    name: 用户管理
+    serialno: 0203
+  configServer:
+    name: 配置管理
+    serialno: 0201
+mybatis-plus:
+  mapper-locations: classpath*:/mappers/**.xml
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://%s:%s/ucen_portal?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    username: root
+    password: 111111
+  http:
+    encoding:
+      enabled: true
+  jmx:
+    default-domain: ucen_portal_user
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+  schedule:
+    autosync:
+      org:
+        enable: true
+        time: 08:00:00
+      user:
+        enable: true
+        time: 08:00:00
+  swagger:
+    enabled: false
+logging:
+  path: log
+  level:
+    ucen:
+      userservice: INFO
+    com:
+      cdhr:
+        platform:
+          comm:
+            model:
+              mapper:
+                '*': debug

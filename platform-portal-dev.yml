@@ -1,0 +1,54 @@
+app:
+  name: 用户管理
+  serialno: 0202
+configapp:
+  name: 配置管理
+  serialno: 0201
+defaultadmin: 000000
+logging:
+  level:
+    com:
+      cdhr:
+        platform:
+          comm:
+            model:
+              mapper:
+                '*': debug
+    ucen:
+      userservice: INFO
+  path: log
+mybatis-plus:
+  mapper-locations: classpath*:/mappers/**.xml
+server:
+  masterip: 172.39.8.204
+  port: 18002
+  name: portal
+  close-base-access: false
+  configurl: http://${server.masterip}:18000
+  userurl: http://${server.masterip}:18001
+  slogan:
+  version: V2.1.3
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://%s:%s/ucen_portal?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    username: root
+    password: 111111
+  http:
+    encoding:
+      enabled: true
+  jackson:
+    default-property-inclusion: non_null
+  jmx:
+    default-domain: ucen_portal_user
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+swagger:
+  enabled: true
+js:
+  control:
+    isshownav: true
+cas:
+  enabled: false
