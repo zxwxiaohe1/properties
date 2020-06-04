@@ -1,7 +1,7 @@
 app:
   serialno: 0201
-configpath: D:/16/Config.xml
-#configpath: /maven/test/cdhr
+#configpath: D:/16/Config.xml
+configpath: /maven/test/cdhr
 mybatis:
   mapperLocations: classpath:mappers/*.xml
   typeAliasesPackage: System.Dao.domain
